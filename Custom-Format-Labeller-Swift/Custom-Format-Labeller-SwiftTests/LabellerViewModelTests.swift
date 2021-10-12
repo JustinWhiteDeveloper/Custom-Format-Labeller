@@ -29,7 +29,6 @@ class LabellerViewModelTests: XCTestCase {
     
         //given
         let state = LabellerViewModelObservable(blockOffset: 100)
-        let labelItem = state.labelItem
         
         let bundle = Bundle(for: type(of: self))
         let file = bundle.path(forResource: "Test-2", ofType: "clabel")!
@@ -50,7 +49,6 @@ class LabellerViewModelTests: XCTestCase {
     
         //given
         let state = LabellerViewModelObservable(blockOffset: 100)
-        let labelItem = state.labelItem
         
         let bundle = Bundle(for: type(of: self))
         let file = bundle.path(forResource: "Test-2", ofType: "clabel")!
@@ -75,7 +73,6 @@ class LabellerViewModelTests: XCTestCase {
         let totalOffset = 1000
 
         let state = LabellerViewModelObservable(blockOffset: blockSize)
-        let labelItem = state.labelItem
         
         let bundle = Bundle(for: type(of: self))
         let file = bundle.path(forResource: "Test-2", ofType: "clabel")!
