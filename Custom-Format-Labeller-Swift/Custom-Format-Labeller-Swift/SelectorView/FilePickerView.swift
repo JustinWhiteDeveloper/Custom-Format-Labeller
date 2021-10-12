@@ -1,0 +1,93 @@
+//
+//  FilePickerView.swift
+//  Custom-Format-Labeller-Swift
+//
+//  Created by Justin White on 5/09/21.
+//
+
+import Foundation
+import SwiftUI
+import Custom_Label_Format_Swift
+
+private enum Sizings {
+    static let defaultViewSize: CGSize = CGSize(width: 600, height: 400)
+    
+    static let standardPadding: CGFloat = 20.0
+}
+
+private enum Strings {
+    static let selectLabel = NSLocalizedString("FilePicker.SelectLabel", comment: "Select Label")
+    
+    static let createNewLabel = NSLocalizedString("FilePicker.CreateNewLabel", comment: "Create New Label")
+
+    static let fileNotFound = NSLocalizedString("FilePicker.FileNotFound", comment: "File Not Found Error")
+}
+
+struct FilePickerView: View {
+    
+    @Binding var viewState: ScreenState
+
+    @State private var labelFile: String = ""
+    
+    @State private var newFileDirectory: String = ""
+    
+    static var labelFile: String = ""
+    
+    var body: some View {
+        
+        VStack {
+            Text(Strings.selectLabel).bold()
+
+            FolderSelector(folder: $labelFile, action: {
+                loadFiles()
+            })
+            .padding([.leading,.bottom,.trailing],
+                     Sizings.standardPadding)
+            
+            Text(Strings.createNewLabel).bold()
+
+            FolderSelector(folder: $newFileDirectory, action: {
+                writeNewFile()
+                loadFiles()
+            })
+            .padding([.leading,.bottom,.trailing],
+                     Sizings.standardPadding)
+            
+        }.padding(.all, Sizings.standardPadding)
+        .frame(width: Sizings.defaultViewSize.width,
+               height: Sizings.defaultViewSize.height,
+               alignment: .center)
+    }
+    
+    func writeNewFile() {
+        
+        let folderNotFound = !FileManager.default.fileExists(atPath: newFileDirectory)
+        
+        if folderNotFound {
+            print(Strings.fileNotFound)
+            return
+        }
+        
+        let reader = FolderCustomFormatReader()
+        let value = reader.readFolder(source: newFileDirectory)
+        
+        let destination = "\(newFileDirectory)/\((newFileDirectory as NSString).lastPathComponent).clabel"
+        
+        let writer = FolderCustomFormatWriter()
+        writer.writeFile(destination: destination, value: value)
+        labelFile = destination
+    }
+    
+    func loadFiles() {
+        
+        let filesNotFound = !FileManager.default.fileExists(atPath: labelFile)
+        
+        if filesNotFound {
+            print(Strings.fileNotFound)
+            return
+        }
+
+        FilePickerView.labelFile = labelFile
+        viewState = .labelContent
+    }
+}

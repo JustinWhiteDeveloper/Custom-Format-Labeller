@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1705C6AA26F6DFE1009194C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705C6A926F6DFE1009194C1 /* Constants.swift */; };
+		172DABE426F0C2C000056180 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172DABE326F0C2C000056180 /* Localizable.strings */; };
+		172DABEA26F53EDE00056180 /* ItemNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DABE926F53EDE00056180 /* ItemNavigationView.swift */; };
+		172DABEF26F54A3E00056180 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DABEE26F54A3E00056180 /* NameView.swift */; };
+		172DABF126F54C8800056180 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DABF026F54C8700056180 /* TypeView.swift */; };
+		172DABF326F54EB400056180 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DABF226F54EB400056180 /* CategoryView.swift */; };
+		172DABF526F5603500056180 /* BottomToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DABF426F5603500056180 /* BottomToolsView.swift */; };
+		172DABF726F5649100056180 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DABF626F5649100056180 /* LoadingView.swift */; };
+		1748FEDA26E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FED926E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift */; };
+		1748FEDC26E342470099C9FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FEDB26E342470099C9FF /* ContentView.swift */; };
+		1748FEDE26E3424A0099C9FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1748FEDD26E3424A0099C9FF /* Assets.xcassets */; };
+		1748FEE126E3424A0099C9FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1748FEE026E3424A0099C9FF /* Preview Assets.xcassets */; };
+		1748FEED26E3424A0099C9FF /* LabellerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FEEC26E3424A0099C9FF /* LabellerViewModelTests.swift */; };
+		1748FEF826E3424A0099C9FF /* Custom_Format_Labeller_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FEF726E3424A0099C9FF /* Custom_Format_Labeller_SwiftUITests.swift */; };
+		1748FF0626E361430099C9FF /* FolderSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FF0526E361430099C9FF /* FolderSelector.swift */; };
+		1748FF0826E46A010099C9FF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FF0726E46A010099C9FF /* WebView.swift */; };
+		1748FF0A26E46C010099C9FF /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748FF0926E46C010099C9FF /* FilePickerView.swift */; };
+		1748FF0D26E4823C0099C9FF /* Custom-Label-Format-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1748FF0C26E4823C0099C9FF /* Custom-Label-Format-Swift */; };
+		178CD21B2715779900A9538F /* LabelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CD21A2715779900A9538F /* LabelItem.swift */; };
+		1795337127082B32007769BC /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795337027082B32007769BC /* LabelViewModel.swift */; };
+		1795337327085254007769BC /* Test-1.clabel in Resources */ = {isa = PBXBuildFile; fileRef = 1795337227085254007769BC /* Test-1.clabel */; };
+		1795337527085583007769BC /* Test-2.clabel in Resources */ = {isa = PBXBuildFile; fileRef = 1795337427085583007769BC /* Test-2.clabel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1748FEE926E3424A0099C9FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1748FECE26E342470099C9FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1748FED526E342470099C9FF;
+			remoteInfo = "Custom-Format-Labeller-Swift";
+		};
+		1748FEF426E3424A0099C9FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1748FECE26E342470099C9FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1748FED526E342470099C9FF;
+			remoteInfo = "Custom-Format-Labeller-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1705C6A926F6DFE1009194C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		172DABE326F0C2C000056180 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		172DABE926F53EDE00056180 /* ItemNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigationView.swift; sourceTree = "<group>"; };
+		172DABEE26F54A3E00056180 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		172DABF026F54C8700056180 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
+		172DABF226F54EB400056180 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		172DABF426F5603500056180 /* BottomToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolsView.swift; sourceTree = "<group>"; };
+		172DABF626F5649100056180 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1748FED626E342470099C9FF /* Custom-Format-Labeller-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Format-Labeller-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1748FED926E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_Format_Labeller_SwiftApp.swift; sourceTree = "<group>"; };
+		1748FEDB26E342470099C9FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		1748FEDD26E3424A0099C9FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1748FEE026E3424A0099C9FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1748FEE226E3424A0099C9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1748FEE326E3424A0099C9FF /* Custom_Format_Labeller_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Custom_Format_Labeller_Swift.entitlements; sourceTree = "<group>"; };
+		1748FEE826E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Custom-Format-Labeller-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1748FEEC26E3424A0099C9FF /* LabellerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabellerViewModelTests.swift; sourceTree = "<group>"; };
+		1748FEEE26E3424A0099C9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1748FEF326E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Custom-Format-Labeller-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1748FEF726E3424A0099C9FF /* Custom_Format_Labeller_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_Format_Labeller_SwiftUITests.swift; sourceTree = "<group>"; };
+		1748FEF926E3424A0099C9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1748FF0526E361430099C9FF /* FolderSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSelector.swift; sourceTree = "<group>"; };
+		1748FF0726E46A010099C9FF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		1748FF0926E46C010099C9FF /* FilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerView.swift; sourceTree = "<group>"; };
+		178CD21A2715779900A9538F /* LabelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelItem.swift; sourceTree = "<group>"; };
+		1795337027082B32007769BC /* LabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
+		1795337227085254007769BC /* Test-1.clabel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Test-1.clabel"; sourceTree = "<group>"; };
+		1795337427085583007769BC /* Test-2.clabel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Test-2.clabel"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1748FED326E342470099C9FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1748FF0D26E4823C0099C9FF /* Custom-Label-Format-Swift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1748FEE526E3424A0099C9FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1748FEF026E3424A0099C9FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1705C6A626F6D924009194C1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1795337027082B32007769BC /* LabelViewModel.swift */,
+				178CD21A2715779900A9538F /* LabelItem.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		172DABEB26F540FF00056180 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				1748FEDB26E342470099C9FF /* ContentView.swift */,
+				172DABE926F53EDE00056180 /* ItemNavigationView.swift */,
+				172DABEE26F54A3E00056180 /* NameView.swift */,
+				1748FF0726E46A010099C9FF /* WebView.swift */,
+				172DABF026F54C8700056180 /* TypeView.swift */,
+				172DABF226F54EB400056180 /* CategoryView.swift */,
+				172DABF426F5603500056180 /* BottomToolsView.swift */,
+				172DABF626F5649100056180 /* LoadingView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		172DABED26F541EB00056180 /* SelectorView */ = {
+			isa = PBXGroup;
+			children = (
+				1748FF0526E361430099C9FF /* FolderSelector.swift */,
+				1748FF0926E46C010099C9FF /* FilePickerView.swift */,
+			);
+			path = SelectorView;
+			sourceTree = "<group>";
+		};
+		1748FECD26E342470099C9FF = {
+			isa = PBXGroup;
+			children = (
+				1748FED826E342470099C9FF /* Custom-Format-Labeller-Swift */,
+				1748FEEB26E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests */,
+				1748FEF626E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests */,
+				1748FED726E342470099C9FF /* Products */,
+				1795336B27081CD7007769BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1748FED726E342470099C9FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1748FED626E342470099C9FF /* Custom-Format-Labeller-Swift.app */,
+				1748FEE826E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests.xctest */,
+				1748FEF326E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1748FED826E342470099C9FF /* Custom-Format-Labeller-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				1705C6A626F6D924009194C1 /* ViewModels */,
+				172DABED26F541EB00056180 /* SelectorView */,
+				172DABEB26F540FF00056180 /* ContentView */,
+				1748FED926E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift */,
+				1705C6A926F6DFE1009194C1 /* Constants.swift */,
+				1748FEDD26E3424A0099C9FF /* Assets.xcassets */,
+				1748FEE226E3424A0099C9FF /* Info.plist */,
+				1748FEE326E3424A0099C9FF /* Custom_Format_Labeller_Swift.entitlements */,
+				172DABE326F0C2C000056180 /* Localizable.strings */,
+				1748FEDF26E3424A0099C9FF /* Preview Content */,
+			);
+			path = "Custom-Format-Labeller-Swift";
+			sourceTree = "<group>";
+		};
+		1748FEDF26E3424A0099C9FF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1748FEE026E3424A0099C9FF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1748FEEB26E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				1795337427085583007769BC /* Test-2.clabel */,
+				1795337227085254007769BC /* Test-1.clabel */,
+				1748FEEC26E3424A0099C9FF /* LabellerViewModelTests.swift */,
+				1748FEEE26E3424A0099C9FF /* Info.plist */,
+			);
+			path = "Custom-Format-Labeller-SwiftTests";
+			sourceTree = "<group>";
+		};
+		1748FEF626E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1748FEF726E3424A0099C9FF /* Custom_Format_Labeller_SwiftUITests.swift */,
+				1748FEF926E3424A0099C9FF /* Info.plist */,
+			);
+			path = "Custom-Format-Labeller-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		1795336B27081CD7007769BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1748FED526E342470099C9FF /* Custom-Format-Labeller-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1748FEFC26E3424A0099C9FF /* Build configuration list for PBXNativeTarget "Custom-Format-Labeller-Swift" */;
+			buildPhases = (
+				1748FED226E342470099C9FF /* Sources */,
+				1748FED326E342470099C9FF /* Frameworks */,
+				1748FED426E342470099C9FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Custom-Format-Labeller-Swift";
+			packageProductDependencies = (
+				1748FF0C26E4823C0099C9FF /* Custom-Label-Format-Swift */,
+			);
+			productName = "Custom-Format-Labeller-Swift";
+			productReference = 1748FED626E342470099C9FF /* Custom-Format-Labeller-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1748FEE726E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1748FEFF26E3424A0099C9FF /* Build configuration list for PBXNativeTarget "Custom-Format-Labeller-SwiftTests" */;
+			buildPhases = (
+				1748FEE426E3424A0099C9FF /* Sources */,
+				1748FEE526E3424A0099C9FF /* Frameworks */,
+				1748FEE626E3424A0099C9FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1748FEEA26E3424A0099C9FF /* PBXTargetDependency */,
+			);
+			name = "Custom-Format-Labeller-SwiftTests";
+			packageProductDependencies = (
+			);
+			productName = "Custom-Format-Labeller-SwiftTests";
+			productReference = 1748FEE826E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1748FEF226E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1748FF0226E3424A0099C9FF /* Build configuration list for PBXNativeTarget "Custom-Format-Labeller-SwiftUITests" */;
+			buildPhases = (
+				1748FEEF26E3424A0099C9FF /* Sources */,
+				1748FEF026E3424A0099C9FF /* Frameworks */,
+				1748FEF126E3424A0099C9FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1748FEF526E3424A0099C9FF /* PBXTargetDependency */,
+			);
+			name = "Custom-Format-Labeller-SwiftUITests";
+			productName = "Custom-Format-Labeller-SwiftUITests";
+			productReference = 1748FEF326E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1748FECE26E342470099C9FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					1748FED526E342470099C9FF = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					1748FEE726E3424A0099C9FF = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 1748FED526E342470099C9FF;
+					};
+					1748FEF226E3424A0099C9FF = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 1748FED526E342470099C9FF;
+					};
+				};
+			};
+			buildConfigurationList = 1748FED126E342470099C9FF /* Build configuration list for PBXProject "Custom-Format-Labeller-Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1748FECD26E342470099C9FF;
+			packageReferences = (
+				1748FF0B26E4823C0099C9FF /* XCRemoteSwiftPackageReference "Custom-Label-Format-Swift" */,
+			);
+			productRefGroup = 1748FED726E342470099C9FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1748FED526E342470099C9FF /* Custom-Format-Labeller-Swift */,
+				1748FEE726E3424A0099C9FF /* Custom-Format-Labeller-SwiftTests */,
+				1748FEF226E3424A0099C9FF /* Custom-Format-Labeller-SwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1748FED426E342470099C9FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1748FEE126E3424A0099C9FF /* Preview Assets.xcassets in Resources */,
+				172DABE426F0C2C000056180 /* Localizable.strings in Resources */,
+				1748FEDE26E3424A0099C9FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1748FEE626E3424A0099C9FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1795337327085254007769BC /* Test-1.clabel in Resources */,
+				1795337527085583007769BC /* Test-2.clabel in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1748FEF126E3424A0099C9FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1748FED226E342470099C9FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1748FEDC26E342470099C9FF /* ContentView.swift in Sources */,
+				1748FF0A26E46C010099C9FF /* FilePickerView.swift in Sources */,
+				172DABEF26F54A3E00056180 /* NameView.swift in Sources */,
+				172DABF726F5649100056180 /* LoadingView.swift in Sources */,
+				1748FF0826E46A010099C9FF /* WebView.swift in Sources */,
+				172DABEA26F53EDE00056180 /* ItemNavigationView.swift in Sources */,
+				1748FF0626E361430099C9FF /* FolderSelector.swift in Sources */,
+				1705C6AA26F6DFE1009194C1 /* Constants.swift in Sources */,
+				172DABF126F54C8800056180 /* TypeView.swift in Sources */,
+				178CD21B2715779900A9538F /* LabelItem.swift in Sources */,
+				1748FEDA26E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift in Sources */,
+				172DABF326F54EB400056180 /* CategoryView.swift in Sources */,
+				172DABF526F5603500056180 /* BottomToolsView.swift in Sources */,
+				1795337127082B32007769BC /* LabelViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1748FEE426E3424A0099C9FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1748FEED26E3424A0099C9FF /* LabellerViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1748FEEF26E3424A0099C9FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1748FEF826E3424A0099C9FF /* Custom_Format_Labeller_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1748FEEA26E3424A0099C9FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1748FED526E342470099C9FF /* Custom-Format-Labeller-Swift */;
+			targetProxy = 1748FEE926E3424A0099C9FF /* PBXContainerItemProxy */;
+		};
+		1748FEF526E3424A0099C9FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1748FED526E342470099C9FF /* Custom-Format-Labeller-Swift */;
+			targetProxy = 1748FEF426E3424A0099C9FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1748FEFA26E3424A0099C9FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1748FEFB26E3424A0099C9FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1748FEFD26E3424A0099C9FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Custom-Format-Labeller-Swift/Custom_Format_Labeller_Swift.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Custom-Format-Labeller-Swift/Preview Content\"";
+				DEVELOPMENT_TEAM = 26TL3CY23Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Custom-Format-Labeller-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "justinwhite.Custom-Format-Labeller-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1748FEFE26E3424A0099C9FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Custom-Format-Labeller-Swift/Custom_Format_Labeller_Swift.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Custom-Format-Labeller-Swift/Preview Content\"";
+				DEVELOPMENT_TEAM = 26TL3CY23Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Custom-Format-Labeller-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "justinwhite.Custom-Format-Labeller-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1748FF0026E3424A0099C9FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 26TL3CY23Q;
+				INFOPLIST_FILE = "Custom-Format-Labeller-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "justinwhite.Custom-Format-Labeller-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custom-Format-Labeller-Swift.app/Contents/MacOS/Custom-Format-Labeller-Swift";
+			};
+			name = Debug;
+		};
+		1748FF0126E3424A0099C9FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 26TL3CY23Q;
+				INFOPLIST_FILE = "Custom-Format-Labeller-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "justinwhite.Custom-Format-Labeller-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custom-Format-Labeller-Swift.app/Contents/MacOS/Custom-Format-Labeller-Swift";
+			};
+			name = Release;
+		};
+		1748FF0326E3424A0099C9FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 26TL3CY23Q;
+				INFOPLIST_FILE = "Custom-Format-Labeller-SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "justinwhite.Custom-Format-Labeller-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Custom-Format-Labeller-Swift";
+			};
+			name = Debug;
+		};
+		1748FF0426E3424A0099C9FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 26TL3CY23Q;
+				INFOPLIST_FILE = "Custom-Format-Labeller-SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "justinwhite.Custom-Format-Labeller-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Custom-Format-Labeller-Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1748FED126E342470099C9FF /* Build configuration list for PBXProject "Custom-Format-Labeller-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1748FEFA26E3424A0099C9FF /* Debug */,
+				1748FEFB26E3424A0099C9FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1748FEFC26E3424A0099C9FF /* Build configuration list for PBXNativeTarget "Custom-Format-Labeller-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1748FEFD26E3424A0099C9FF /* Debug */,
+				1748FEFE26E3424A0099C9FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1748FEFF26E3424A0099C9FF /* Build configuration list for PBXNativeTarget "Custom-Format-Labeller-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1748FF0026E3424A0099C9FF /* Debug */,
+				1748FF0126E3424A0099C9FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1748FF0226E3424A0099C9FF /* Build configuration list for PBXNativeTarget "Custom-Format-Labeller-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1748FF0326E3424A0099C9FF /* Debug */,
+				1748FF0426E3424A0099C9FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1748FF0B26E4823C0099C9FF /* XCRemoteSwiftPackageReference "Custom-Label-Format-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JustinWhiteDeveloper/Custom-Label-Format-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1748FF0C26E4823C0099C9FF /* Custom-Label-Format-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1748FF0B26E4823C0099C9FF /* XCRemoteSwiftPackageReference "Custom-Label-Format-Swift" */;
+			productName = "Custom-Label-Format-Swift";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1748FECE26E342470099C9FF /* Project object */;
+}

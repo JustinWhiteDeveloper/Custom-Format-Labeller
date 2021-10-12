@@ -1,0 +1,33 @@
+
+"MainScreen.nextBlock" = ">>";
+"MainScreen.previousBlock" = "<<";
+"MainScreen.Select" = "Select";
+
+"FilePicker.SelectLabel" = "Select .clabel File";
+"FilePicker.FileNotFound" = "File(s) not found";
+"FilePicker.SelectFile" = "Select";
+"FilePicker.CreateNewLabel" = "Create new .clabel";
+
+"Navigation.Back" = "Back";
+"Navigation.previousItem" = "<";
+"Navigation.nextItem" = ">";
+"Navigation.PickerLabel" = "Select";
+
+"NameView.Title" = "Name:";
+"NameView.DoneEditingButton" = "Done";
+
+"TypeView.label" = "Type:";
+
+"CategoryView.Title" = "Categories:";
+"CategoryView.AddCategoryButtonTitle" = "+";
+"CategoryView.RemoveCategoryButtonTitle" = "-";
+
+"BottomToolView.CopyPrevious" = "Copy Previous";
+"BottomToolView.Google" = "Search Google";
+"BottomToolView.Amazon" = "Search Amazon.jp";
+"BottomToolView.Mark" = "Mark";
+"BottomToolView.Unmark" = "Unmark";
+"BottomToolView.Save" = "Save";
+"BottomToolView.Next" = "Next";
+
+"LoadingScreen.Label" = "Loading...";
