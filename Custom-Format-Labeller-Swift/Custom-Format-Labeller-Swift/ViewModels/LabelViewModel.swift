@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import Custom_Label_Format_Swift
+import SwiftUI
 
 private enum Strings {
     static let googleSearchPrefix = "https://www.google.com/search?q="
@@ -193,9 +194,10 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
     }
     
     func onCopyPreviousConfigurationButtonClicked() {
-        let previousIdentity = customFormatValue.sortedItems().map({$0.key})[observable.labelItem.pageNumber - 1]
-
-        observable.labelItem.loadValuesMatching(identity: previousIdentity, source: customFormatValue)
+        let previousPageNumber = observable.labelItem.pageNumber - 1
+        let previousIdentity = customFormatValue.sortedItems().map({$0.value})[previousPageNumber]
+        
+        observable.labelItem.loadValuesMatching(item: previousIdentity)
     }
     
     func onLoadGoogleSearch() {

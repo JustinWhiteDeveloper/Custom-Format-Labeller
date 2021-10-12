@@ -8,7 +8,12 @@
 import Foundation
 import Custom_Label_Format_Swift
 
-class LabelItem {
+struct LabelItem: Identifiable {
+    
+    var id: String {
+        currentId
+    }
+    
     var currentId: String = ""
     
     var itemName: String = ""
@@ -31,7 +36,8 @@ class LabelItem {
     
     var blockOffset: Int = 0
     
-    func updatePageNumber(pageNumber: Int, source: CustomFormat) {
+
+    mutating func updatePageNumber(pageNumber: Int, source: CustomFormat) {
         
         let items = source.sortedItems()
         
@@ -46,8 +52,8 @@ class LabelItem {
         currentId = items.map({$0.key})[pageNumber]
 
         if let item = source.items[currentId] {
-            loadValuesMatching(identity: currentId, source: source)
-
+            loadValuesMatching(item: item)
+            isMarked = item.isMarked
             itemName = item.displayName
             numberOfSourceFiles = item.subItemCount
         } else {
@@ -59,12 +65,8 @@ class LabelItem {
         }
     }
     
-    func loadValuesMatching(identity: String, source: CustomFormat) {
-        
-        guard let item = source.items[identity] else {
-            return
-        }
-                
+    mutating func loadValuesMatching(item: CustomFormatItem) {
+
         selectedTypeIndex = item.mediaType?.associatedIndexWithOffset(offset: 1) ?? 0
         let indexes = item.categories.map({$0.associatedIndexWithOffset(offset: 1)})
         
@@ -75,7 +77,5 @@ class LabelItem {
         }
 
         numberOfCategoriesToDisplay = max(1, indexes.count)
-        
-        isMarked = item.isMarked
     }
 }

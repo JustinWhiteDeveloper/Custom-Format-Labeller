@@ -16,11 +16,11 @@ private enum Sizings {
 }
 
 private enum Strings {
-    static let selectLabel = NSLocalizedString("FilePicker.SelectLabel", comment: "Select Label")
+    static let selectLabelTitle = NSLocalizedString("FilePicker.SelectLabel", comment: "Select Label")
     
-    static let createNewLabel = NSLocalizedString("FilePicker.CreateNewLabel", comment: "Create New Label")
+    static let createNewLabelTitle = NSLocalizedString("FilePicker.CreateNewLabel", comment: "Create New Label")
 
-    static let fileNotFound = NSLocalizedString("FilePicker.FileNotFound", comment: "File Not Found Error")
+    static let fileNotFoundTitle = NSLocalizedString("FilePicker.FileNotFound", comment: "File Not Found Error")
 }
 
 struct FilePickerView: View {
@@ -36,7 +36,7 @@ struct FilePickerView: View {
     var body: some View {
         
         VStack {
-            Text(Strings.selectLabel).bold()
+            Text(Strings.selectLabelTitle).bold()
 
             FolderSelector(folder: $labelFile, action: {
                 loadFiles()
@@ -44,7 +44,7 @@ struct FilePickerView: View {
             .padding([.leading,.bottom,.trailing],
                      Sizings.standardPadding)
             
-            Text(Strings.createNewLabel).bold()
+            Text(Strings.createNewLabelTitle).bold()
 
             FolderSelector(folder: $newFileDirectory, action: {
                 writeNewFile()
@@ -64,7 +64,7 @@ struct FilePickerView: View {
         let folderNotFound = !FileManager.default.fileExists(atPath: newFileDirectory)
         
         if folderNotFound {
-            print(Strings.fileNotFound)
+            print(Strings.fileNotFoundTitle)
             return
         }
         
@@ -83,7 +83,7 @@ struct FilePickerView: View {
         let filesNotFound = !FileManager.default.fileExists(atPath: labelFile)
         
         if filesNotFound {
-            print(Strings.fileNotFound)
+            print(Strings.fileNotFoundTitle)
             return
         }
 
