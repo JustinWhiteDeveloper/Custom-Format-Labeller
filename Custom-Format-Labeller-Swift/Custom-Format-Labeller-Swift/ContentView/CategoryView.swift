@@ -55,7 +55,7 @@ struct CategoryView: View {
                         }
                     }
                 }
-            }.padding([.horizontal], Sizings.padding)
+            }.padding(.horizontal, Sizings.padding)
         }
     }
 }

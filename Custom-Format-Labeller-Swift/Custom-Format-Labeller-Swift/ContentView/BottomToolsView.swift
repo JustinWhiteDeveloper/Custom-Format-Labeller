@@ -79,7 +79,7 @@ struct BottomToolsView: View {
                 }
             }
                 
-        }.padding([.top,.bottom], Sizings.padding)
+        }.padding(.vertical, Sizings.padding)
     }
 }
 
