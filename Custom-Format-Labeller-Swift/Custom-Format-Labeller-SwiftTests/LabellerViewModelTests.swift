@@ -64,6 +64,8 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertEqual(state.labelItem.pageNumber, 200)
         XCTAssertEqual(state.labelItem.relativePageNumber, 0)
         XCTAssertEqual(state.labelItem.totalPageOffset, 200)
+        XCTAssertEqual(state.website, "https://www.google.com/search?q=The%20Seven%20Deadly%20Sins%20-%20%E4%B8%83%E3%81%A4%E3%81%AE%E5%A4%A7%E7%BD%AA%20imdb")
+
     }
     
     func testLabellerViewModel_NextPageActionAtEndDoesNothing() throws {
@@ -136,6 +138,7 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertEqual(state.labelItem.itemName, "まっしろ")
         XCTAssertEqual(state.labelItem.numberOfSourceFiles, 10)
         XCTAssertFalse(state.labelItem.isMarked)
+        XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D%20amazon%20jp")
     }
 }
 

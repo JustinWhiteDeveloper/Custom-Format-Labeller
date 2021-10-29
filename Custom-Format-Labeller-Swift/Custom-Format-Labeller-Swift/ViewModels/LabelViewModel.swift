@@ -6,8 +6,6 @@ import SwiftUI
 private enum Strings {
     static let googleSearchPrefix = "https://www.google.com/search?q="
         
-    static let imdbString = "imdb"
-
     static let amazonJpString = "amazon jp"
 
     static let select = NSLocalizedString("MainScreen.Select", comment: "Select state")
@@ -123,20 +121,8 @@ class CustomFormatLabellerViewModel {
         
         let searchFile = observable.formattedFileNames[pageNumber]
 
-        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
-        let containsEnglish = searchFile.rangeOfCharacter(from: characterset) != nil
-
-        if containsEnglish {
-            let searchTerm = ("\(searchFile) \(Strings.imdbString)"
-                                .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-            observable.website = Strings.googleSearchPrefix + searchTerm
-
-        } else {
-            let searchTerm = ("\(searchFile) \(Strings.amazonJpString)"
-                                .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-            observable.website = Strings.googleSearchPrefix + searchTerm
-        }
+        let websiteSource = BillingualSuggestedWebsiteSource()
+        observable.website = websiteSource.getWebsiteForFilename(label: searchFile)
     }
 }
 
