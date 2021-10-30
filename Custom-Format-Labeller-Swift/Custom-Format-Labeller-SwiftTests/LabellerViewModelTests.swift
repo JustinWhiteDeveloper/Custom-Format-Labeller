@@ -140,5 +140,22 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertFalse(state.labelItem.isMarked)
         XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D%20amazon%20jp")
     }
+    
+    func testLabellerViewModel_OnGoogleSearchButtonPressed_ShouldChangeWebsitee() throws {
+    
+        //given
+        let state = LabellerViewModelObservable(blockOffset: 100)
+
+        let bundle = Bundle(for: type(of: self))
+        let file = bundle.path(forResource: "Test-1", ofType: "clabel")!
+        
+        let viewModel = CustomFormatLabellerViewModel(observable: state, fileAddress: file)
+        
+        //when
+        viewModel.onLoadGoogleSearch()
+        
+        //then (assert changed)
+        XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D")
+    }
 }
 

@@ -63,11 +63,17 @@ class CustomFormatLabellerViewModel {
     
     private var rawFileNames: [String] = []
 
+    private let websiteSource: SuggestedWebsiteSource
+    
     let observable: LabellerViewModelObservable
     
-    init(observable: LabellerViewModelObservable, fileAddress: String) {
+    init(observable: LabellerViewModelObservable,
+         fileAddress: String,
+         websiteSource: SuggestedWebsiteSource = BillingualSuggestedWebsiteSource()) {
+        
         self.observable = observable
         self.fileAddress = fileAddress
+        self.websiteSource = websiteSource
         
         setup()
     }
@@ -121,8 +127,7 @@ class CustomFormatLabellerViewModel {
         
         let searchFile = observable.formattedFileNames[pageNumber]
 
-        let websiteSource = BillingualSuggestedWebsiteSource()
-        observable.website = websiteSource.getWebsiteForFilename(label: searchFile)
+        observable.website = websiteSource.urlForFilename(label: searchFile)
     }
 }
 
@@ -187,11 +192,7 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
     }
     
     func onLoadGoogleSearch() {
-        let searchTerm = ("\(rawFileNames[(observable.labelItem.pageNumber)])"
-                            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-        
-        observable.website = Strings.googleSearchPrefix + searchTerm
-        
+        observable.website = websiteSource.googleSearchUrlForFilename(label: rawFileNames[(observable.labelItem.pageNumber)])
     }
     
     func onLoadAmazonJpSearch() {

@@ -8,10 +8,12 @@
 import Foundation
 
 protocol SuggestedWebsiteSource {
-    func getWebsiteForFilename(label: String) -> String
+    func urlForFilename(label: String) -> String
+    
+    func googleSearchUrlForFilename(label: String) -> String
 }
 
-class BillingualSuggestedWebsiteSource {
+class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     
     enum Constants {
         static let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -23,7 +25,7 @@ class BillingualSuggestedWebsiteSource {
         static let amazonJpString = "amazon jp"
     }
     
-    func getWebsiteForFilename(label: String) -> String {
+    func urlForFilename(label: String) -> String {
         
         
         let containsEnglish = label.rangeOfCharacter(from: Constants.characterset) != nil
@@ -39,5 +41,9 @@ class BillingualSuggestedWebsiteSource {
             return Constants.googleSearchPrefix + searchTerm
         }
     }
-
+    
+    func googleSearchUrlForFilename(label: String) -> String {
+        let searchTerm = label.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        return Constants.googleSearchPrefix + searchTerm
+    }
 }
