@@ -97,9 +97,9 @@ struct LabellerView: View {
                                    }, nextButtonClicked: {
                                         viewModel.onNextButtonClicked()
                                    }, googleButtonClicked: {
-                                        viewModel.onLoadGoogleSearch()
+                                        viewModel.onGoogleSearch()
                                    }, amazonJPButtonClicked: {
-                                        viewModel.onLoadAmazonJpSearch()
+                                        viewModel.onGoogleAmazonJpSearch()
                                    }, copyPreviousButtonClicked: {
                                         viewModel.onCopyPreviousConfigurationButtonClicked()
                                    }

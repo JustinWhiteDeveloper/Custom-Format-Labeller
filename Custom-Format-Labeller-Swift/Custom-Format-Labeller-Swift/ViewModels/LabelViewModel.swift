@@ -4,10 +4,6 @@ import Custom_Label_Format_Swift
 import SwiftUI
 
 private enum Strings {
-    static let googleSearchPrefix = "https://www.google.com/search?q="
-        
-    static let amazonJpString = "amazon jp"
-
     static let select = NSLocalizedString("MainScreen.Select", comment: "Select state")
 }
 
@@ -44,9 +40,9 @@ protocol LabellerViewViewModel {
     
     func onCopyPreviousConfigurationButtonClicked()
         
-    func onLoadGoogleSearch()
+    func onGoogleSearch()
         
-    func onLoadAmazonJpSearch()
+    func onGoogleAmazonJpSearch()
     
     func onNextBlockButtonClicked()
     
@@ -191,15 +187,15 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
         observable.labelItem.loadValuesMatching(item: previousIdentity)
     }
     
-    func onLoadGoogleSearch() {
-        observable.website = websiteSource.googleSearchUrlForFilename(label: rawFileNames[(observable.labelItem.pageNumber)])
+    func onGoogleSearch() {
+        let label = rawFileNames[(observable.labelItem.pageNumber)]
+        observable.website = websiteSource.googleSearchUrlForFilename(label:label)
     }
     
-    func onLoadAmazonJpSearch() {
-        let searchTerm = ("\(rawFileNames[(observable.labelItem.pageNumber)]) \(Strings.amazonJpString)"
-                            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-        
-        observable.website = Strings.googleSearchPrefix + searchTerm
+    func onGoogleAmazonJpSearch() {
+        let label = rawFileNames[(observable.labelItem.pageNumber)]
+
+        observable.website = websiteSource.googleAmazonSearchUrlForFilename(label: label)
     }
 
     func onNextBlockButtonClicked() {

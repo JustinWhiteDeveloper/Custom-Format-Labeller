@@ -11,6 +11,8 @@ protocol SuggestedWebsiteSource {
     func urlForFilename(label: String) -> String
     
     func googleSearchUrlForFilename(label: String) -> String
+    
+    func googleAmazonSearchUrlForFilename(label: String) -> String
 }
 
 class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
@@ -20,9 +22,9 @@ class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
         
         static let googleSearchPrefix = "https://www.google.com/search?q="
         
-        static let imdbString = "imdb"
+        static let imdbSuffix = "imdb"
 
-        static let amazonJpString = "amazon jp"
+        static let amazonJpSuffix = "amazon jp"
     }
     
     func urlForFilename(label: String) -> String {
@@ -31,12 +33,12 @@ class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
         let containsEnglish = label.rangeOfCharacter(from: Constants.characterset) != nil
 
         if containsEnglish {
-            let searchTerm = ("\(label) \(Constants.imdbString)"
+            let searchTerm = ("\(label) \(Constants.imdbSuffix)"
                                 .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
             return Constants.googleSearchPrefix + searchTerm
 
         } else {
-            let searchTerm = ("\(label) \(Constants.amazonJpString)"
+            let searchTerm = ("\(label) \(Constants.amazonJpSuffix)"
                                 .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
             return Constants.googleSearchPrefix + searchTerm
         }
@@ -44,6 +46,13 @@ class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     
     func googleSearchUrlForFilename(label: String) -> String {
         let searchTerm = label.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        return Constants.googleSearchPrefix + searchTerm
+    }
+    
+    func googleAmazonSearchUrlForFilename(label: String) -> String {
+        
+        let searchTerm = ("\(label) \(Constants.amazonJpSuffix)"
+                            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
         return Constants.googleSearchPrefix + searchTerm
     }
 }
