@@ -18,7 +18,7 @@ protocol SuggestedWebsiteSource {
 class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     
     enum Constants {
-        static let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        static let englishCharacterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
         
         static let googleSearchPrefix = "https://www.google.com/search?q="
         
@@ -28,20 +28,13 @@ class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     }
     
     func urlForFilename(label: String) -> String {
-        
-        
-        let containsEnglish = label.rangeOfCharacter(from: Constants.characterset) != nil
+        let containsEnglish = label.rangeOfCharacter(from: Constants.englishCharacterSet) != nil
 
-        if containsEnglish {
-            let searchTerm = ("\(label) \(Constants.imdbSuffix)"
-                                .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-            return Constants.googleSearchPrefix + searchTerm
-
-        } else {
-            let searchTerm = ("\(label) \(Constants.amazonJpSuffix)"
-                                .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-            return Constants.googleSearchPrefix + searchTerm
-        }
+        let suffix = containsEnglish ? Constants.imdbSuffix : Constants.amazonJpSuffix
+        
+        let searchTerm = ("\(label) \(suffix)"
+                            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
+        return Constants.googleSearchPrefix + searchTerm
     }
     
     func googleSearchUrlForFilename(label: String) -> String {
@@ -50,7 +43,6 @@ class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     }
     
     func googleAmazonSearchUrlForFilename(label: String) -> String {
-        
         let searchTerm = ("\(label) \(Constants.amazonJpSuffix)"
                             .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
         return Constants.googleSearchPrefix + searchTerm
