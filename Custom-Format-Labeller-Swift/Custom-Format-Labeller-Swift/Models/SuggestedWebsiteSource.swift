@@ -17,7 +17,7 @@ protocol SuggestedWebsiteSource {
 
 class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     
-    enum Constants {
+    enum Strings {
         static let englishCharacterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
         
         static let googleSearchPrefix = "https://www.google.com/search?q="
@@ -28,23 +28,23 @@ class BillingualSuggestedWebsiteSource: SuggestedWebsiteSource {
     }
     
     func urlForFilename(label: String) -> String {
-        let containsEnglish = label.rangeOfCharacter(from: Constants.englishCharacterSet) != nil
+        let containsEnglish = label.rangeOfCharacter(from: Strings.englishCharacterSet) != nil
 
-        let suffix = containsEnglish ? Constants.imdbSuffix : Constants.amazonJpSuffix
+        let suffix = containsEnglish ? Strings.imdbSuffix : Strings.amazonJpSuffix
         
         let searchTerm = ("\(label) \(suffix)"
                             .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-        return Constants.googleSearchPrefix + searchTerm
+        return Strings.googleSearchPrefix + searchTerm
     }
     
     func googleSearchUrlForFilename(label: String) -> String {
         let searchTerm = label.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-        return Constants.googleSearchPrefix + searchTerm
+        return Strings.googleSearchPrefix + searchTerm
     }
     
     func googleAmazonSearchUrlForFilename(label: String) -> String {
-        let searchTerm = ("\(label) \(Constants.amazonJpSuffix)"
+        let searchTerm = ("\(label) \(Strings.amazonJpSuffix)"
                             .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) ?? ""
-        return Constants.googleSearchPrefix + searchTerm
+        return Strings.googleSearchPrefix + searchTerm
     }
 }
