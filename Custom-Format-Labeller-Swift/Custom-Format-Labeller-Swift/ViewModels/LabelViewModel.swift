@@ -76,7 +76,6 @@ class CustomFormatLabellerViewModel {
     
     private func setup() {
         
-        // Setup Files
         let formatReader = FolderCustomFormatReader()
         customFormatValue = formatReader.readFile(source: fileAddress)
 
@@ -110,8 +109,8 @@ class CustomFormatLabellerViewModel {
     }
     
     private func updatePageNumber(pageNumber: Int) {
-        
-        if pageNumber < 0 || pageNumber >= customFormatValue.items.count {
+
+        guard pageNumber >= 0 && pageNumber < customFormatValue.items.count else {
             return
         }
         
@@ -133,7 +132,8 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
     
         var item = customFormatValue.items[observable.labelItem.currentId] ?? CustomFormatItem()
         
-        if observable.labelItem.selectedTypeIndex > 0 {
+        let validIndex = observable.labelItem.selectedTypeIndex > 0
+        if validIndex {
             item.mediaType = MediaType.valueFromIndex(index: observable.labelItem.selectedTypeIndex, offset: -1)
         }
         
@@ -143,7 +143,6 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
         item.isMarked = observable.labelItem.isMarked
 
         let nameHasChanged = !observable.labelItem.itemName.isEmpty && observable.labelItem.itemName != item.displayName
-        
         if nameHasChanged {
             item.name = observable.labelItem.itemName
         }
@@ -207,7 +206,6 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
     }
     
     func onRelativePageChange(page: Int) {
-    
         let pageNumber = page + observable.labelItem.totalPageOffset
         
         updatePageNumber(pageNumber: pageNumber)
