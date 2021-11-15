@@ -120,8 +120,7 @@ struct LabellerView: View {
                 }
                 
                 WebView(website: $observable.website)
-                    .frame(width: Sizings.websiteSize.width,
-                           height: Sizings.websiteSize.height)
+                    .frame(size: Sizings.websiteSize)
             }
         }
     }

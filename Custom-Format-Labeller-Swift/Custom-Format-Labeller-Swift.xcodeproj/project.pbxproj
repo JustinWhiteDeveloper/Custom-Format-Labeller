@@ -30,6 +30,7 @@
 		1795337127082B32007769BC /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795337027082B32007769BC /* LabelViewModel.swift */; };
 		1795337327085254007769BC /* Test-1.clabel in Resources */ = {isa = PBXBuildFile; fileRef = 1795337227085254007769BC /* Test-1.clabel */; };
 		1795337527085583007769BC /* Test-2.clabel in Resources */ = {isa = PBXBuildFile; fileRef = 1795337427085583007769BC /* Test-2.clabel */; };
+		17BE9A882742500300643C16 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE9A872742500300643C16 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		1795337027082B32007769BC /* LabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
 		1795337227085254007769BC /* Test-1.clabel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Test-1.clabel"; sourceTree = "<group>"; };
 		1795337427085583007769BC /* Test-2.clabel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Test-2.clabel"; sourceTree = "<group>"; };
+		17BE9A872742500300643C16 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				172DABEB26F540FF00056180 /* ContentView */,
 				1748FED926E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift */,
 				1705C6A926F6DFE1009194C1 /* Constants.swift */,
+				17BE9A872742500300643C16 /* Extensions.swift */,
 				1748FEDD26E3424A0099C9FF /* Assets.xcassets */,
 				1748FEE226E3424A0099C9FF /* Info.plist */,
 				1748FEE326E3424A0099C9FF /* Custom_Format_Labeller_Swift.entitlements */,
@@ -373,6 +376,7 @@
 				1705C6AA26F6DFE1009194C1 /* Constants.swift in Sources */,
 				172DABF126F54C8800056180 /* TypeView.swift in Sources */,
 				178CD21B2715779900A9538F /* LabelItem.swift in Sources */,
+				17BE9A882742500300643C16 /* Extensions.swift in Sources */,
 				1748FEDA26E342470099C9FF /* Custom_Format_Labeller_SwiftApp.swift in Sources */,
 				172DABF326F54EB400056180 /* CategoryView.swift in Sources */,
 				172DABF526F5603500056180 /* BottomToolsView.swift in Sources */,

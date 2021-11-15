@@ -54,9 +54,7 @@ struct FilePickerView: View {
                      Sizings.standardPadding)
             
         }.padding(.all, Sizings.standardPadding)
-        .frame(width: Sizings.defaultViewSize.width,
-               height: Sizings.defaultViewSize.height,
-               alignment: .center)
+        .frame(size: Sizings.defaultViewSize)
     }
     
     func writeNewFile() {
