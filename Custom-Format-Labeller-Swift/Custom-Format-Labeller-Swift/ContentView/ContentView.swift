@@ -108,18 +108,20 @@ struct LabellerView: View {
                     HStack {
                         Button(Strings.previousBlock) {
                             viewModel.onPreviousBlockButtonClicked()
-                        }.padding(.leading)
+                        }
                         
                         Text(rangeLabelText)
+                            .padding(.horizontal)
                         
                         Button(Strings.nextBlock) {
                             viewModel.onNextBlockButtonClicked()
-                        }.padding(.trailing)
+                        }
 
                     }.padding()
                 }
                 
-                WebView(website: $observable.website)
+                WebView(website: $observable.website,
+                        lastUpdated: $observable.websiteLastUpdated)
                     .frame(size: Sizings.websiteSize)
             }
         }

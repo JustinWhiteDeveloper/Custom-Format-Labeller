@@ -13,6 +13,8 @@ class LabellerViewModelObservable: ObservableObject {
 
     @Published var website = ""
     
+    @Published var websiteLastUpdated = Date()
+
     @Published var formattedFileNames: [String] = []
     
     @Published var categories: [String] = [Strings.select]
@@ -123,6 +125,7 @@ class CustomFormatLabellerViewModel {
         let searchFile = observable.formattedFileNames[pageNumber]
 
         observable.website = websiteSource.urlForFilename(label: searchFile)
+        observable.websiteLastUpdated = Date()
     }
 }
 
@@ -188,13 +191,16 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
     
     func onGoogleSearch() {
         let label = rawFileNames[(observable.labelItem.pageNumber)]
+        
         observable.website = websiteSource.googleSearchUrlForFilename(label:label)
+        observable.websiteLastUpdated = Date()
     }
     
     func onGoogleAmazonJpSearch() {
         let label = rawFileNames[(observable.labelItem.pageNumber)]
 
         observable.website = websiteSource.googleAmazonSearchUrlForFilename(label: label)
+        observable.websiteLastUpdated = Date()
     }
 
     func onNextBlockButtonClicked() {

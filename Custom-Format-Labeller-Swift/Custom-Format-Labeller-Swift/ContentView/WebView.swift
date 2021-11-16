@@ -11,18 +11,21 @@ import SwiftUI
 
 struct WebView: View {
     @Binding var website: String
-    
+        
+    @Binding var lastUpdated: Date
+
     var body: some View {
-        WebViewWrapper(website: website)
+        WebViewWrapper(website: website, lastUpdated: lastUpdated)
     }
 }
 
 struct WebViewWrapper: NSViewRepresentable {
     let website: String
         
+    let lastUpdated: Date
+    
     func makeNSView(context: Context) -> WKWebView {
-        let view = WKWebView()
-        return view
+        return WKWebView()
     }
     
     func updateNSView(_ nsView: WKWebView, context: Context) {

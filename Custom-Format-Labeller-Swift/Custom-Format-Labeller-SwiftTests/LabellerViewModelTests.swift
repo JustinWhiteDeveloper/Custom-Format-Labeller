@@ -121,7 +121,8 @@ class LabellerViewModelTests: XCTestCase {
 
         let bundle = Bundle(for: type(of: self))
         let file = bundle.path(forResource: "Test-1", ofType: "clabel")!
-        
+        let websiteLastUpdated = state.websiteLastUpdated.timeIntervalSince1970
+
         let viewModel = CustomFormatLabellerViewModel(observable: state, fileAddress: file)
         
         //when
@@ -139,40 +140,45 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertEqual(state.labelItem.numberOfSourceFiles, 10)
         XCTAssertFalse(state.labelItem.isMarked)
         XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D%20amazon%20jp")
+        XCTAssertTrue(state.websiteLastUpdated.timeIntervalSince1970 > websiteLastUpdated)
     }
     
-    func testLabellerViewModel_OnGoogleSearchButtonPressed_ShouldChangeWebsitee() throws {
+    func testLabellerViewModel_OnGoogleSearchButtonPressed_ShouldChangeWebsite() throws {
     
         //given
         let state = LabellerViewModelObservable(blockOffset: 100)
 
         let bundle = Bundle(for: type(of: self))
         let file = bundle.path(forResource: "Test-1", ofType: "clabel")!
-        
+        let websiteLastUpdated = state.websiteLastUpdated.timeIntervalSince1970
+
         let viewModel = CustomFormatLabellerViewModel(observable: state, fileAddress: file)
         
         //when
         viewModel.onGoogleSearch()
         
-        //then (assert changed)
+        //then
         XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D")
+        XCTAssertTrue(state.websiteLastUpdated.timeIntervalSince1970 > websiteLastUpdated)
     }
     
-    func testLabellerViewModel_OnGoogleAmazonSearchButtonPressed_ShouldChangeWebsitee() throws {
+    func testLabellerViewModel_OnGoogleAmazonSearchButtonPressed_ShouldChangeWebsite() throws {
     
         //given
         let state = LabellerViewModelObservable(blockOffset: 100)
 
         let bundle = Bundle(for: type(of: self))
         let file = bundle.path(forResource: "Test-1", ofType: "clabel")!
+        let websiteLastUpdated = state.websiteLastUpdated.timeIntervalSince1970
         
         let viewModel = CustomFormatLabellerViewModel(observable: state, fileAddress: file)
         
         //when
         viewModel.onGoogleAmazonJpSearch()
         
-        //then (assert changed)
+        //then
         XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D%20amazon%20jp")
+        XCTAssertTrue(state.websiteLastUpdated.timeIntervalSince1970 > websiteLastUpdated)
     }
 }
 
