@@ -9,6 +9,10 @@ private enum Strings {
     static let selectLabel = NSLocalizedString("FilePicker.SelectFile", comment: "Select Button Text")
 }
 
+private enum Sizings {
+    static let folderChooserSize = CGSize(width: 500, height: 600)
+}
+
 struct FolderSelector: View {
     
     @Binding var folder: String
@@ -24,9 +28,7 @@ struct FolderSelector: View {
     var action:() -> ()
     
     func selectFolder() {
-        let folderChooserPoint = CGPoint(x: 0, y: 0)
-        let folderChooserSize = CGSize(width: 500, height: 600)
-        let folderChooserRectangle = CGRect(origin: folderChooserPoint, size: folderChooserSize)
+        let folderChooserRectangle = CGRect(origin: CGPoint.zero, size: Sizings.folderChooserSize)
         let folderPicker = NSOpenPanel(contentRect: folderChooserRectangle,
                                        styleMask: .utilityWindow,
                                        backing: .buffered,
