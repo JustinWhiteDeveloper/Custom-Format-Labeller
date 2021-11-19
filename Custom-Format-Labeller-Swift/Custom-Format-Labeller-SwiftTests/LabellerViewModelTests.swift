@@ -143,6 +143,26 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertTrue(state.websiteLastUpdated.timeIntervalSince1970 > websiteLastUpdated)
     }
     
+    func testLabellerViewModel_CopyPreviousButtonPressedAtFirstIndex_ShouldDoNothing() throws {
+
+        //given
+        let state = LabellerViewModelObservable(blockOffset: 100)
+        
+        let bundle = Bundle(for: type(of: self))
+        let file = bundle.path(forResource: "Test-2", ofType: "clabel")!
+        
+        let viewModel = CustomFormatLabellerViewModel(observable: state, fileAddress: file)
+    
+        //when
+        viewModel.onCopyPreviousConfigurationButtonClicked()
+        
+        //then
+        XCTAssertEqual(state.labelItem.pageNumber, 0)
+        XCTAssertEqual(state.labelItem.relativePageNumber, 0)
+        XCTAssertEqual(state.labelItem.totalPageOffset, 0)
+        XCTAssertEqual(state.labelItem.itemName, "13 Reasons Why - 13の理由")
+    }
+    
     func testLabellerViewModel_OnGoogleSearchButtonPressed_ShouldChangeWebsite() throws {
     
         //given

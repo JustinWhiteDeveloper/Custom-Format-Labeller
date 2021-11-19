@@ -184,6 +184,11 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
     
     func onCopyPreviousConfigurationButtonClicked() {
         let previousPageNumber = observable.labelItem.pageNumber - 1
+        
+        if previousPageNumber < 0 {
+            return
+        }
+        
         let previousIdentity = customFormatValue.sortedItems().map({$0.value})[previousPageNumber]
         
         observable.labelItem.loadValuesMatching(item: previousIdentity)
