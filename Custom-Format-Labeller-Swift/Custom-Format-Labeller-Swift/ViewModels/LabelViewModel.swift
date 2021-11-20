@@ -73,10 +73,16 @@ class CustomFormatLabellerViewModel {
         self.fileAddress = fileAddress
         self.websiteSource = websiteSource
         
-        setup()
+        let categoryNames = MediaCategory.allCases.map({$0.rawValue})
+        observable.categories.append(contentsOf: categoryNames)
+        
+        let typeNames = MediaType.allCases.map({$0.rawValue})
+        observable.types.append(contentsOf: typeNames)
+        
+        loadFileFromDisk()
     }
     
-    private func setup() {
+    private func loadFileFromDisk() {
         
         let formatReader = FolderCustomFormatReader()
         customFormatValue = formatReader.readFile(source: fileAddress)
@@ -88,31 +94,17 @@ class CustomFormatLabellerViewModel {
         
         observable.labelItem.currentId = currentId
         
-        var lastIndex = 0
-        
-        for file in values.map({$0.value}) {
-            if file.isLabelled == false {
-                break
-            }
-            
-            lastIndex += 1
-        }
-        
-        updatePageNumber(pageNumber: min(values.count - 1, lastIndex))
+        let firstUnlabelledIndex = values.map({$0.value.isLabelled}).firstIndex(of: false) ?? 0
+
+        updatePageNumber(pageNumber: min(values.count - 1, firstUnlabelledIndex))
         
         rawFileNames = values.map({$0.value.displayName})
-        
-        // Setup Categories and Types
-        let categoryNames = MediaCategory.allCases.map({$0.rawValue})
-        observable.categories.append(contentsOf: categoryNames)
-        
-        let typeNames = MediaType.allCases.map({$0.rawValue})
-        observable.types.append(contentsOf: typeNames)
     }
     
     private func updatePageNumber(pageNumber: Int) {
 
-        guard pageNumber >= 0 && pageNumber < customFormatValue.items.count else {
+        let validPageNumber = pageNumber >= 0 && pageNumber < customFormatValue.items.count
+        guard validPageNumber else {
             return
         }
         
