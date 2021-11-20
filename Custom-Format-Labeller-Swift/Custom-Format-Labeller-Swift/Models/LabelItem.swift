@@ -8,6 +8,10 @@
 import Foundation
 import Custom_Label_Format_Swift
 
+private enum Sizings {
+    static let maximumCategories = 5
+}
+
 struct LabelItem: Identifiable {
     
     var id: String {
@@ -20,7 +24,7 @@ struct LabelItem: Identifiable {
     
     var selectedTypeIndex = 0
         
-    var selectedCategoryIndexes: [Int] = [0,0,0,0,0]
+    var selectedCategoryIndexes: [Int] = [Int](repeating: 0, count: Sizings.maximumCategories)
 
     var numberOfCategoriesToDisplay: Int = 1
     
@@ -59,7 +63,11 @@ struct LabelItem: Identifiable {
         } else {
             selectedTypeIndex = 0
             isMarked = false
-            selectedCategoryIndexes = [0,0,0,0,0]
+            
+            selectedCategoryIndexes = selectedCategoryIndexes.map({ _ in
+                return 0
+            })
+            
             numberOfCategoriesToDisplay = 1
             numberOfSourceFiles = 0
         }
@@ -70,12 +78,10 @@ struct LabelItem: Identifiable {
         selectedTypeIndex = item.mediaType?.associatedIndexWithOffset(offset: 1) ?? 0
         let indexes = item.categories.map({$0.associatedIndexWithOffset(offset: 1)})
         
-        selectedCategoryIndexes = [0,0,0,0,0]
-
-        for (index,item) in indexes.enumerated() {
-            selectedCategoryIndexes[index] = item
-        }
-
+        selectedCategoryIndexes = selectedCategoryIndexes.enumerated().map({ (index, value) in
+            return index < indexes.count ? indexes[index] : 0
+        })
+        
         numberOfCategoriesToDisplay = max(1, indexes.count)
     }
 }
