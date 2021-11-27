@@ -110,11 +110,13 @@ class CustomFormatLabellerViewModel {
         
         observable.labelItem.updatePageNumber(pageNumber: pageNumber, source: customFormatValue)
         
-        observable.formattedFileNames = customFormatValue.sortedItems()
+        let sortedItems = customFormatValue.sortedItems()
+        
+        observable.formattedFileNames = sortedItems
             .map({$0.value.displayName + ($0.value.isLabelled ? " ✔" : "") + ($0.value.isMarked ? " *!" : "")})
         
         
-        let searchFile = observable.formattedFileNames[pageNumber]
+        let searchFile = sortedItems[pageNumber].value.displayName
 
         observable.website = websiteSource.urlForFilename(label: searchFile)
         observable.websiteLastUpdated = Date()

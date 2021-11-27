@@ -185,6 +185,24 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertTrue(state.websiteLastUpdated.timeIntervalSince1970 > websiteLastUpdated)
     }
     
+    func testLabellerViewModel_ShouldDisplayCorrectWebsiteForAlreadyLabelledItem() throws {
+    
+        //given
+        let state = LabellerViewModelObservable(blockOffset: 100)
+
+        let bundle = Bundle(for: type(of: self))
+        let file = bundle.path(forResource: "Test-1", ofType: "clabel")!
+
+        let viewModel = CustomFormatLabellerViewModel(observable: state, fileAddress: file)
+        
+        //when
+        viewModel.onPreviousBlockButtonClicked()
+        
+        //then
+        XCTAssertEqual(state.website, "https://www.google.com/search?q=The%20Seven%20Deadly%20Sins%20-%20%E4%B8%83%E3%81%A4%E3%81%AE%E5%A4%A7%E7%BD%AA%20imdb")
+    }
+    
+    
     func testLabellerViewModel_OnGoogleAmazonSearchButtonPressed_ShouldChangeWebsite() throws {
     
         //given
