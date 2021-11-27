@@ -15,6 +15,8 @@ private enum Sizings {
 private enum Strings {
     static let nameLabel = NSLocalizedString("NameView.Title", comment: "Name Label title")
     
+    static let folderNameLabel = NSLocalizedString("NameView.FolderTitle", comment: "Folder Name Label title")
+
     static let doneEditingButtonTitle = NSLocalizedString("NameView.DoneEditingButton", comment: "Done Editing Button Title")
 }
 
@@ -22,6 +24,8 @@ struct NameView: View {
 
     @Binding var name: String
             
+    @Binding var folderName: String
+    
     @Binding var identifier: String
     
     @Binding var numberOfFiles: Int
@@ -42,6 +46,13 @@ struct NameView: View {
             
             if showEditLabel {
                 TextField(name, text: $name)
+                    .padding(.all, Sizings.padding)
+                
+                Text(Strings.folderNameLabel)
+                    .bold()
+                    .padding(.all, Sizings.padding)
+                
+                TextField(folderName, text: $folderName)
                     .padding(.all, Sizings.padding)
                 
                 Button(Strings.doneEditingButtonTitle) {

@@ -142,6 +142,16 @@ extension CustomFormatLabellerViewModel: LabellerViewViewModel {
             item.name = observable.labelItem.itemName
         }
         
+        if let itemFolderName = item.folderName {
+            
+            let folderNameIsNotEmpty = !observable.labelItem.folderName.isEmpty
+            let folderNameHasChanged = observable.labelItem.folderName != itemFolderName
+            
+            if folderNameIsNotEmpty && folderNameHasChanged  {
+                item.folderName = observable.labelItem.folderName
+            }
+        }
+        
         customFormatValue.items.updateValue(item, forKey: observable.labelItem.currentId)
         
         let contentReader: CustomFormatWriter = FolderCustomFormatWriter()

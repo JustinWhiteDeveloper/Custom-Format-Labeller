@@ -73,6 +73,7 @@ struct LabellerView: View {
                     VStack {
                     
                         NameView(name: $observable.labelItem.itemName,
+                                 folderName: $observable.labelItem.folderName,
                                  identifier: $observable.labelItem.currentId,
                                  numberOfFiles: $observable.labelItem.numberOfSourceFiles,
                                  showEditLabel: $observable.showEditNameLabel).onTapGesture {

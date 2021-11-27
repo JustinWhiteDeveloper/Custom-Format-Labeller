@@ -22,6 +22,8 @@ struct LabelItem: Identifiable {
     
     var itemName: String = ""
     
+    var folderName: String = ""
+    
     var selectedTypeIndex = 0
         
     var selectedCategoryIndexes: [Int] = [Int](repeating: 0, count: Sizings.maximumCategories)
@@ -59,6 +61,7 @@ struct LabelItem: Identifiable {
             loadValuesMatching(item: item)
             isMarked = item.isMarked
             itemName = item.displayName
+            folderName = item.folderName ?? ""
             numberOfSourceFiles = item.subItemCount
         } else {
             selectedTypeIndex = 0

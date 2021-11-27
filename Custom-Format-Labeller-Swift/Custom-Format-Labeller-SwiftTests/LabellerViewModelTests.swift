@@ -137,6 +137,7 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertEqual(state.labelItem.currentId, "3028891087299070427")
         XCTAssertEqual(state.labelItem.pageNumber, 300)
         XCTAssertEqual(state.labelItem.itemName, "まっしろ")
+        XCTAssertEqual(state.labelItem.folderName, "まっしろ")
         XCTAssertEqual(state.labelItem.numberOfSourceFiles, 10)
         XCTAssertFalse(state.labelItem.isMarked)
         XCTAssertEqual(state.website, "https://www.google.com/search?q=%E3%81%BE%E3%81%A3%E3%81%97%E3%82%8D%20amazon%20jp")
@@ -160,7 +161,9 @@ class LabellerViewModelTests: XCTestCase {
         XCTAssertEqual(state.labelItem.pageNumber, 0)
         XCTAssertEqual(state.labelItem.relativePageNumber, 0)
         XCTAssertEqual(state.labelItem.totalPageOffset, 0)
-        XCTAssertEqual(state.labelItem.itemName, "13 Reasons Why - 13の理由")
+        XCTAssertEqual(state.labelItem.folderName, "13 Reasons Why - 13の理由")
+        XCTAssertEqual(state.labelItem.itemName, "13 Reasons Why")
+
     }
     
     func testLabellerViewModel_OnGoogleSearchButtonPressed_ShouldChangeWebsite() throws {
