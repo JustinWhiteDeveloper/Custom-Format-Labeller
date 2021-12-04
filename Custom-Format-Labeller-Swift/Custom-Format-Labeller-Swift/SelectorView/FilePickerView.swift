@@ -53,7 +53,7 @@ struct FilePickerView: View {
             .padding([.leading,.bottom,.trailing],
                      Sizings.standardPadding)
             
-        }.padding(.all, Sizings.standardPadding)
+        }.padding(Sizings.standardPadding)
         .frame(size: Sizings.defaultViewSize)
     }
     

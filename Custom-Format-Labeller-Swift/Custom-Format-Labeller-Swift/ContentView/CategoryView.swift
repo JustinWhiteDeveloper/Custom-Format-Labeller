@@ -33,7 +33,7 @@ struct CategoryView: View {
             HStack {
                 Text(Strings.categoryLabelTitle)
                     .bold()
-                    .padding(.all, Sizings.padding)
+                    .padding(Sizings.padding)
                 
                 Button(Strings.categoryAddButtonTitle) {
                     categoriesToDisplay = min(indexes.count, categoriesToDisplay + 1)

@@ -42,18 +42,18 @@ struct NameView: View {
             
             Text(Strings.nameLabel)
                 .bold()
-                .padding(.all, Sizings.padding)
+                .padding(Sizings.padding)
             
             if showEditLabel {
                 TextField(name, text: $name)
-                    .padding(.all, Sizings.padding)
+                    .padding(Sizings.padding)
                 
                 Text(Strings.folderNameLabel)
                     .bold()
-                    .padding(.all, Sizings.padding)
+                    .padding(Sizings.padding)
                 
                 TextField(folderName, text: $folderName)
-                    .padding(.all, Sizings.padding)
+                    .padding(Sizings.padding)
                 
                 Button(Strings.doneEditingButtonTitle) {
                     showEditLabel = false

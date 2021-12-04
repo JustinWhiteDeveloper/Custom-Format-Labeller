@@ -25,14 +25,14 @@ struct TypeView: View {
         VStack {
             Text(Strings.typeLabel)
                 .bold()
-                .padding(.all, Sizings.padding)
+                .padding(Sizings.padding)
 
             Picker(selection: $typeIndex, label: Text("")) {
                 ForEach(0 ..< types.count, id: \.self) {
                    Text(types[$0])
                 }
             }
-        }.padding(.all, Sizings.padding)
+        }.padding(Sizings.padding)
     }
 }
 
